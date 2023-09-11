@@ -1,20 +1,19 @@
 import pygame
-from pygame.sprite import sprite
+from pygame.sprite import Sprite
 
-class Missile(sprite):
-    """A class to handle missiles *o* """
+class Missile(Sprite):
+    """ A class to handle missiles *o* """
 
     def __init__(self, ai_game):
         """Create a missiles obj at current ship pos"""
         super().__init__()
         self.screen = ai_game.screen
         self.settings = ai_game.settings
-        self.color = ai_game.missile_color
+        self.color = self.settings.missile_color
 
 
     # Create a missil rect at (0, 0) and then set correct position.
-    self.rect = pygame.Rect(0, 0, self.settings.bullet_width,
-            self.settings.bullet_height)
+    self.rect = pygame.Rect(0, 0, self.settings.missile_width, self.settings.missile_height)
     self.rect.midtop = ai_game.ship.rect.midtop
 
     #Store the missil pos
@@ -22,7 +21,7 @@ class Missile(sprite):
 
     def update(self):
         """Move the missil up"""
-        #Update the exact pos of the missiles
+        #Update the exact pos of the.py missiles
         self.y -= self.settings.bullet_speed
         #Update the rect pos
         self.rect.y =  self.y
