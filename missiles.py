@@ -12,17 +12,18 @@ class Missile(Sprite):
         self.color = self.settings.missile_color
 
 
-    # Create a missil rect at (0, 0) and then set correct position.
-    self.rect = pygame.Rect(0, 0, self.settings.missile_width, self.settings.missile_height)
-    self.rect.midtop = ai_game.ship.rect.midtop
+        # Create a missil rect at (0, 0) and then set correct position.
+        self.rect = pygame.Rect(0, 0, self.settings.missile_width, 
+        self.settings.missile_height)
+        self.rect.midtop = ai_game.ship.rect.midtop
 
-    #Store the missil pos
-    self.y = float(self.rect.y)
+        #Store the missil pos
+        self.y = float(self.rect.y)
 
     def update(self):
         """Move the missil up"""
         #Update the exact pos of the.py missiles
-        self.y -= self.settings.bullet_speed
+        self.y -= self.settings.missile_speed
         #Update the rect pos
         self.rect.y =  self.y
 
