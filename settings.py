@@ -9,10 +9,10 @@ class Settings:
         self.bg_color = (41, 40, 50)
         
         #Missiles config
-        self.missile_speed = 2.0
-        self.missile_width = 3
-        self.missile_height = 15
-        self.missile_color = (60, 60, 60)
+        self.missile_speed = 3.0
+        self.missile_width = 4
+        self.missile_height = 25
+        self.missile_color = (255,165,0)
         
 
         #sets the speed of the ship
