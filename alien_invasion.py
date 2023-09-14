@@ -37,7 +37,14 @@ class AlienInvasion:
                 self._update_screen()
                 self.clock.tick(60)
                 self.missiles.update()
-                
+
+            #deleting old missiles
+            for missile in self.missiles.copy():
+                 if missile.rect.bottom <= 0:
+                      self.missiles.remove(Missile)
+            print(len(self.missiles))
+            
+                           
         def _check_events(self):
                 """respond to keypresses and mouse events"""
                 for event in pygame.event.get():
@@ -54,7 +61,7 @@ class AlienInvasion:
                     self.ship.moving_right = True
                 elif event.key == pygame.K_LEFT:
                     self.ship.moving_left = True
-                elif event.key == pygame.K_q:
+                elif event.key == pygame.K_ESCAPE:
                     sys.exit()
                 elif event.key == pygame.K_SPACE:
                     self._fire_missile()
@@ -75,7 +82,7 @@ class AlienInvasion:
                 """Update images on the screen and flip to the new screen"""
                 self.screen.fill(self.settings.bg_color)
                 for missile in self.missiles.sprites():
-                    missile.draw_missile()
+                    missile.draw_missil()
                 self.ship.blitme()
                 
                 pygame.display.flip()
