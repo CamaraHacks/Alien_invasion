@@ -75,8 +75,10 @@ class AlienInvasion:
 
         def _fire_missile(self):
             """Creata a missile and add to the group"""
-            new_missile = Missile(self)
-            self.missiles.add(new_missile)
+            if len(self.missiles) < self.settings.missile_limit:
+                new_missile = Missile(self)
+                self.missiles.add(new_missile)
+
         
         def _update_screen(self):
                 """Update images on the screen and flip to the new screen"""
