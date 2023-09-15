@@ -13,6 +13,7 @@ class Settings:
         self.missile_width = 4
         self.missile_height = 25
         self.missile_color = (255,165,0)
+        self.missile_limit = 7
         
 
         #sets the speed of the ship
