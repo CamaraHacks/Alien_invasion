@@ -34,15 +34,10 @@ class AlienInvasion:
             while True:
                 self._check_events()
                 self.ship.update()
+                self.update_missile()
                 self._update_screen()
                 self.clock.tick(60)
                 self.missiles.update()
-
-            #deleting old missiles
-            for missile in self.missiles.copy():
-                 if missile.rect.bottom <= 0:
-                      self.missiles.remove(Missile)
-            print(len(self.missiles))
             
                            
         def _check_events(self):
@@ -79,7 +74,18 @@ class AlienInvasion:
                 new_missile = Missile(self)
                 self.missiles.add(new_missile)
 
+        def update_missile(self):
+            """Handle launched missiles and delete the old ones"""
+            # Update missiles
+            self.missiles.update()
+    
+            # Get rid of missiles that have disappeared by deleting old missiles
+            for missile in self.missiles.copy():
+                if missile.rect.bottom <= 0:
+                    self.missiles.remove(missile)
         
+
+
         def _update_screen(self):
                 """Update images on the screen and flip to the new screen"""
                 self.screen.fill(self.settings.bg_color)
