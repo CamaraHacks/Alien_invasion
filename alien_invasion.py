@@ -3,6 +3,7 @@ import pygame
 from settings import Settings
 from ship import Ship
 from missiles import Missile
+from alien import Alien
 
 class AlienInvasion:
         """Overall class to manage game assets and behavior."""
@@ -25,6 +26,15 @@ class AlienInvasion:
 
             self.ship = Ship(self)
             self.missiles = pygame.sprite.Group()
+            self.aliens = pygame.sprite.Group()
+            
+            self._create_fleet()
+
+        def _create_fleet(self):
+             """create a fleet of aliens"""
+             #make Alien.
+            alien = Alien(self)
+            self.aliens.add(alien)  
 
             
           
