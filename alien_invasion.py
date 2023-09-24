@@ -54,12 +54,6 @@ class AlienInvasion:
             new_alien.rect.y = y_position
             self.aliens.add(new_alien)
             
-
-
-
-
-            
-          
         
         def run_game(self):
             """Start the main loop for the game."""
