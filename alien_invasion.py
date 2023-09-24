@@ -27,11 +27,10 @@ class AlienInvasion:
             self.ship = Ship(self)
             self.missiles = pygame.sprite.Group()
             self.aliens = pygame.sprite.Group()
-            
             self._create_fleet()
 
         def _create_fleet(self):
-             """create a fleet of aliens"""
+            """create a fleet of aliens"""
              #make Alien.
             alien = Alien(self)
             self.aliens.add(alien)  
@@ -102,6 +101,7 @@ class AlienInvasion:
                 for missile in self.missiles.sprites():
                     missile.draw_missil()
                 self.ship.blitme()
+                self.aliens.draw(self.screen)
                 
                 pygame.display.flip()
               
