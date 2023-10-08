@@ -3,6 +3,8 @@ import pygame
 class Ship:
     """A class to handle the ship"""
 
+    
+
     def __init__(self, ai_game):
         """Initialize the ship and set its starting position."""
         self.screen = ai_game.screen
@@ -12,8 +14,9 @@ class Ship:
         self.moving_right = False
         self.moving_left = False
 
-        #load the ship image and gets its rect.
-        self.image = pygame.image.load('D:\Projects\Alien_invasion\images\green_ship.bmp')
+        self.image = pygame.image.load('images\ship.png')
+        self.image = pygame.transform.scale(self.image, (50, 50))
+        
         self.rect = self.image.get_rect()
 
         #Start each new ship at the bottom ceter of the screen
