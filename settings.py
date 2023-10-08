@@ -8,9 +8,12 @@ class Settings:
         #screen settings
         self.screen_width = 1366
         self.screen_height = 688
-        self.bkg_image = pygame.image.load('D:\Projects\Alien_invasion\images\space_bkg.png')
-        self.bkg_image = pygame.transform.scale(self.bkg_image, (1366, 860))
+        self.space_bkg = pygame.image.load('images\space_bkg.png')
+        self.space_bkg = pygame.transform.scale(self.space_bkg, (1366, 860))
         
+        #Alien Settings
+        self.alien_speed = 1
+
         #Missiles config
         self.missile_speed = 6.0
         self.missile_width = 5
@@ -21,3 +24,7 @@ class Settings:
 
         #sets the speed of the ship
         self.ship_speed = 8
+
+        #Alien Settings
+
+
