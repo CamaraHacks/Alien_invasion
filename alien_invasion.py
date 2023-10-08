@@ -54,6 +54,12 @@ class AlienInvasion:
             new_alien.rect.y = y_position
             self.aliens.add(new_alien)
             
+
+
+
+
+            
+          
         
         def run_game(self):
             """Start the main loop for the game."""
@@ -64,7 +70,11 @@ class AlienInvasion:
                 self._update_screen()
                 self.clock.tick(60)
                 self.missiles.update()
-            
+                self.update_aliens()
+                
+        def update_aliens(self):
+             """update aliens post"""
+             self.aliens.update()
                            
         def _check_events(self):
                 """respond to keypresses and mouse events"""
@@ -114,7 +124,7 @@ class AlienInvasion:
 
         def _update_screen(self):
                 """Update images on the screen and flip to the new screen"""
-                self.screen.blit(self.settings.bkg_image, (0, 0))
+                self.screen.blit(self.settings.space_bkg, (0, 0))
 
                 for missile in self.missiles.sprites():
                     missile.draw_missil()
