@@ -13,6 +13,9 @@ class Settings:
         
         #Alien Settings
         self.alien_speed = 1
+        self.fleet_drop_speed = 10
+        #Fleet direction = 1 means right and -1 means left
+        self.fleet_direction = 1
 
         #Missiles config
         self.missile_speed = 6.0
@@ -25,6 +28,5 @@ class Settings:
         #sets the speed of the ship
         self.ship_speed = 8
 
-        #Alien Settings
 
 
