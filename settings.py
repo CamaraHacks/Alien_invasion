@@ -12,7 +12,7 @@ class Settings:
         self.space_bkg = pygame.transform.scale(self.space_bkg, (1366, 860))
         
         #Alien Settings
-        self.alien_speed = 1
+        self.alien_speed = 4
         self.fleet_drop_speed = 10
         #Fleet direction = 1 means right and -1 means left
         self.fleet_direction = 1
