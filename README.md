@@ -14,7 +14,7 @@
 
 - **Níveis Desafiadores:** Teste suas habilidades em vários níveis, cada um com seu conjunto único de desafios e encontros alienígenas. 🌟🌌
 
-- **Rastreamento de Pontuação Alta:** Compete contra você mesmo e outros para alcançar a maior pontuação. Suas melhores pontuações são salvas no placar para se gabar. 🏆📈
+<-- - **Rastreamento de Pontuação Alta:** Compete contra você mesmo e outros para alcançar a maior pontuação. Suas melhores pontuações são salvas no placar para se gabar. 🏆📈 -->
 
 - **Visuais e Sons Cativantes:** Mergulhe nos visuais envolventes e efeitos sonoros do jogo, melhorando a experiência geral de jogo. 🎶🎮
 
