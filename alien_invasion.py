@@ -37,8 +37,8 @@ class AlienInvasion:
             alien_width, alien_height = alien.rect.size
 
             current_x, current_y = alien_width, alien_height
-            while current_y < (self.settings.screen_height - (2)   * alien_height):
-                while current_x < (self.settings.screen_width - (-3) * alien_width):
+            while current_y < (self.settings.screen_height - (10)   * alien_height):
+                while current_x < (self.settings.screen_width - (11) * alien_width):
                     self._create_alien(current_x,current_y)
                     current_x += 2 * alien_width
 
@@ -54,12 +54,6 @@ class AlienInvasion:
             new_alien.rect.y = y_position
             self.aliens.add(new_alien)
             
-
-
-
-
-            
-          
         
         def run_game(self):
             """Start the main loop for the game."""
@@ -70,11 +64,8 @@ class AlienInvasion:
                 self._update_screen()
                 self.clock.tick(60)
                 self.missiles.update()
-                self.update_aliens()
+                self._update_aliens()
                 
-        def update_aliens(self):
-             """update aliens post"""
-             self.aliens.update()
                            
         def _check_events(self):
                 """respond to keypresses and mouse events"""
@@ -114,14 +105,15 @@ class AlienInvasion:
             """Handle launched missiles and delete the old ones"""
             # Update missiles
             self.missiles.update()
-    
             # Get rid of missiles that have disappeared by deleting old missiles
             for missile in self.missiles.copy():
                 if missile.rect.bottom <= 0:
                     self.missiles.remove(missile)
-        
-
-
+            #check if any bullets that have hit the aliens
+            #if the bullets hit the aliens, explode the alien
+            collision = pygame.sprite.groupcollide(
+                self.missiles, self.aliens, True, True)
+            
         def _update_screen(self):
                 """Update images on the screen and flip to the new screen"""
                 self.screen.blit(self.settings.space_bkg, (0, 0))
@@ -130,28 +122,28 @@ class AlienInvasion:
                     missile.draw_missil()
                 self.ship.blitme()
                 self.aliens.draw(self.screen)
-                
                 pygame.display.flip()
-
-
-        def check_edges(self):
-             """Change the direction of aliens"""
-             for alien in self.aliens.sprites():
-                  if alien.check_edges():
-                       self._change_fleet_direction()
-                       break
-        
-        def _change_fleet_direction(self):
-            """drop the entire fleet"""
-            for alien in self.aliens.sprites():
-                alien.rect.y += self.settings.fleet_drop_speed
-            self.settings.fleet_direction *= -1
 
         def _update_aliens(self):
             """Check if the fleet is at an edge, then update positions."""
             self._check_fleet_edges()
-            self.aliens.update()
+            self.aliens.update()   
+        
 
+        def _check_fleet_edges(self):
+             """responds if a alien reachs a edge"""
+             for alien in self.aliens.sprites():
+                  if alien.check_edges():
+                        self._change_fleet_direction()
+                        break
+        
+        def _change_fleet_direction(self):
+            """Drop the entire fleet and change its direction."""
+            for alien in self.aliens.sprites():
+                alien.rect.y += self.settings.fleet_drop_speed
+            self.settings.fleet_direction *= -1
+
+      
               
 if __name__ == '__main__':
     # Make a game instance, and run the game. or something else
