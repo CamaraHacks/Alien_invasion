@@ -1,7 +1,5 @@
 # Invasão Alienígena 🛸💥
 
-![Invasão Alienígena](images\screen_shot.png)
-
 **Invasão Alienígena** é um emocionante jogo de tiro espacial em 2D desenvolvido em Python com a biblioteca Pygame. Neste jogo, você assume o papel de um corajoso piloto de nave espacial encarregado de defender a Terra de uma invasão alienígena. O destino do planeta está em suas mãos enquanto você manobra sua nave, desvia dos tiros inimigos e destrói as naves alienígenas invasoras. Prepare-se para uma batalha intergaláctica épica! 🌌🚀
 
 ## Recursos 🚀:
