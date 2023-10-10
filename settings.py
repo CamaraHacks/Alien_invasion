@@ -10,16 +10,18 @@ class Settings:
         self.screen_height = 688
         self.space_bkg = pygame.image.load('images\space_bkg.png')
         self.space_bkg = pygame.transform.scale(self.space_bkg, (1366, 860))
+   
+        
         
         #Alien Settings
-        self.alien_speed = 80
+        self.alien_speed = 20
         self.fleet_drop_speed = 10
         #Fleet direction = 1 means right and -1 means left
         self.fleet_direction = 1
 
         #Missiles config
         self.missile_speed = 6.0
-        self.missile_width = 600
+        self.missile_width = 20
         self.missile_height = 25
         self.missile_color = (255,165,0)
         self.missile_limit = 10
