@@ -12,7 +12,7 @@ class AlienInvasion:
         """Overall class to manage game assets and behavior.""" 
         def __init__(self):
             """Initialize the game, and create game resources."""
-            pygame.init()
+            pygame.init()   
             self.clock = pygame.time.Clock()
             self.settings = Settings()
             self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
@@ -116,6 +116,7 @@ class AlienInvasion:
              """start the game after click on play button"""
              button_clicked =self.play_button.rect.collidepoint(mouse_pos)
              if button_clicked and not self.game_active:
+                self.settings.initialize_dynamic_settings()
                 self.status.reset_status()
                 self.game_active = True       
             
@@ -167,7 +168,9 @@ class AlienInvasion:
                 self.missiles, self.aliens, True, True)
             if not self.aliens:
                 self._create_fleet()
-            
+                self.missiles.empty()
+                self.settings.increase_speed()
+                sleep(0.5)
             
 
         def _update_screen(self):
